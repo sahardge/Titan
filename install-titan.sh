@@ -17,4 +17,5 @@ echo "Installing Titan ${VERSION}..."
   cp -r /local/git/Titan/lib ${TITAN}/
   cp -r /local/git/Titan/conf ${TITAN}/
   cp /local/git/Titan/start-titan.groovy ${TITAN}/
+  cp /local/git/Titan/start-titan.sh ${TITAN}/
 fi
