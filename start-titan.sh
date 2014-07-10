@@ -1,3 +1,4 @@
+#!/bin/bash
 CASSANDRA=/usr/bin/etcdctl --peers 172.17.42.1:4001 get /cassandraSeed/node1
 ES=/usr/bin/etcdctl --peers 172.17.42.1:4001 get /elastic/node1
 
