@@ -1,6 +1,6 @@
 #!/bin/bash
 CASSANDRA=`/usr/bin/etcdctl --peers 172.17.42.1:4001 get /cassandraSeed/node1`
-ES=`/usr/bin/etcdctl --peers 172.17.42.1:4001 get /situ/elasticsearch/host
+ES=`/usr/bin/etcdctl --peers 172.17.42.1:4001 get /situ/elasticsearch/host`
 
 
 mv conf/titan.properties conf/titan.properties.orig
