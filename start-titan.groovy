@@ -1,1 +1,1 @@
-g = import com.thinkaurelius.titan.core.TitanFactory; TitanFactory.open("conf/titan.properties);
+import com.thinkaurelius.titan.core.TitanFactory; g = TitanFactory.open("conf/titan.properties);
