@@ -1,1 +1,1 @@
-g = TitanFactory.open("conf/titan.properties);
+g = TitanFactory.open('conf/titan.properties');
