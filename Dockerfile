@@ -14,10 +14,6 @@ RUN cd Titan/conf/ && bash install-confd.sh
 RUN cp -r Titan/conf/titan.toml /var/mountedvol/confd/conf.d/titan.toml
 RUN cp -r Titan/conf/titan.conf.tmpl /var/mountedvol/confd/templates/titan.conf.tmpl
 
-#Make Persisted volume
-RUN mkdir /var/mountedvol
-
-
 WORKDIR /usr/local/titan-cassandra-0.4.4
 
 EXPOSE 8182 8183 8184 4001
