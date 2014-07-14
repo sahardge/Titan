@@ -20,4 +20,4 @@ RUN mkdir /var/mountedvol
 
 WORKDIR /usr/local/titan-cassandra-0.4.4
 
-EXPOSE 8182 8183 8184
+EXPOSE 8182 8183 8184 4001
