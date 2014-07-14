@@ -11,8 +11,8 @@ RUN cd /usr/local/go/src && ./make.bash --no-clean 2>&1
 ENV PATH /usr/local/go/bin:$PATH
 RUN cd Titan && bash install-titan.sh
 RUN cd Titan/conf/ && bash install-confd.sh
-RUN cp Titan/conf/titan.toml /var/mountedvol/confd/conf.d/titan.toml
-RUN cp Titan/conf/titan.conf.tmpl /var/mountedvol/config/confd/templates/titan.conf.tmpl
+RUN cp -r Titan/conf/titan.toml /var/mountedvol/confd/conf.d/titan.toml
+RUN cp -r Titan/conf/titan.conf.tmpl /var/mountedvol/config/confd/templates/titan.conf.tmpl
 
 #Make Persisted volume
 RUN mkdir /var/mountedvol
