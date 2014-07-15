@@ -1,0 +1,21 @@
+[Unit]
+Description=Watches titan.service and reloads on config change
+After=etcd.service
+Requires=titan.service
+After=docker.service
+
+
+[Service]
+TimeoutStartSec=0
+EnvironmentFile=/etc/environment
+RemainAfterExit=yes
+ExecStartPre= /usr/bin/docker pull 160.91.76.121:5000/confd
+ExecStart= /bin/bash -c '/usr/bin/docker start %p || \
+           /usr/bin/docker run -d -name %p 160.91.76.121:5000/confd || \
+           until [ `/usr/bin/etcdctl get /titanchange/value`  "yes" ]; do sleep 30 ; /usr/bin/fleetctl restart titan.service'
+ExecStop= /usr/bin/docker stop -t 3 %p
+ExecStopPost=/usr/bin/fleetctl restart confd-watch.service
+Restart=on-success
+
+[X-Fleet]
+X-ConditionMachineOf=titan.service
