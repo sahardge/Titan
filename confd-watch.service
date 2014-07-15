@@ -10,6 +10,7 @@ TimeoutStartSec=0
 EnvironmentFile=/etc/environment
 RemainAfterExit=yes
 ExecStartPre= /usr/bin/docker pull 160.91.76.121:5000/confd
+ExecStartPre= /usr/bin/etcdctl set /titanchange/value no
 ExecStart= /bin/bash -c '/usr/bin/docker start %p || \
            /usr/bin/docker run -d -name %p 160.91.76.121:5000/titanconfd || \
            until [ `/usr/bin/etcdctl get /titanchange/value`  "yes" ]; do sleep 30 ; /usr/bin/fleetctl restart titan.service'
