@@ -1,0 +1,7 @@
+[template]
+src = "titan.conf.tmpl"
+dest = "/usr/local/titan-cassandra-0.4.4/conf/titan.properties"
+keys = [
+  "/situ/elasticsearch/host",
+    "/cassandraSeed/node1",
+    ]

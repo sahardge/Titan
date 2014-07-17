@@ -1,0 +1,13 @@
+[titan]
+storage.backend=cassandra
+storage.hostname= = {{ .cassandraSeed_node1 }}
+cache.db-cache = true
+cache.db-cache-clean-wait = 20
+cache.db-cache-time = 180000
+cache.db-cache-size = 0.25
+storage.index.search.backend=elasticsearch
+storage.index.search.hostname= = {{ .situ_elasticsearch_host }}
+storage.index.search.client-only=true
+storage.index.search.local-mode=false
+storage.index.search.sniff=false
+
